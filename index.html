@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sorry Babu ❤️</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  min-height:100%;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#ffb6d5,#ffddeb,#d9c4ff);
+  color:#4b2638;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:12px;
+  overflow:hidden;
+}
+
+.card{
+  width:100%;
+  max-width:620px;
+  min-height:94vh;
+  background:rgba(255,255,255,.90);
+  border-radius:30px;
+  padding:22px 18px;
+  box-shadow:0 15px 50px rgba(150,60,110,.25);
+  overflow:hidden;
+  position:relative;
+}
+
+/* PROGRESS */
+
+.progress{
+  display:flex;
+  gap:6px;
+  margin-bottom:15px;
+}
+
+.progress span{
+  height:6px;
+  flex:1;
+  border-radius:20px;
+  background:#efd6e2;
+}
+
+.progress span.active{
+  background:#ff4f96;
+  box-shadow:0 0 10px rgba(255,79,150,.5);
+}
+
+
+/* SCREENS */
+
+.screen{
+  display:none !important;
+  min-height:82vh;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.screen.active{
+  display:flex !important;
+}
+
+
+/* IMAGE */
+
+.image-box{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.image-box img{
+  width:250px;
+  max-width:85%;
+  max-height:330px;
+  object-fit:contain;
+  border-radius:20px;
+  animation:teddyMove 2.5s ease-in-out infinite;
+  filter:drop-shadow(0 10px 18px rgba(210,70,130,.25));
+}
+
+
+/* DIFFERENT MOVEMENT */
+
+@keyframes teddyMove{
+
+  0%,100%{
+    transform:translateY(0) rotate(0deg);
+  }
+
+  25%{
+    transform:translateY(-7px) rotate(-2deg);
+  }
+
+  50%{
+    transform:translateY(0) rotate(0deg);
+  }
+
+  75%{
+    transform:translateY(-7px) rotate(2deg);
+  }
+
+}
+
+
+/* TEXT */
+
+.small-title{
+  color:#a45a7a;
+  font-size:17px;
+  margin-bottom:8px;
+}
+
+h1{
+  font-family:Georgia,serif;
+  color:#d63d78;
+  font-size:36px;
+  line-height:1.25;
+  margin:8px 0 16px;
+}
+
+p{
+  max-width:500px;
+  font-size:17px;
+  line-height:1.65;
+  color:#684458;
+  margin:5px 0;
+}
+
+
+/* BUTTON */
+
+button{
+  border:0;
+  padding:15px 30px;
+  border-radius:35px;
+  background:#ff4f96;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:22px;
+  box-shadow:0 8px 25px rgba(255,79,150,.35);
+  transition:.2s;
+}
+
+button:active{
+  transform:scale(.94);
+}
+
+.forgive-btn{
+  font-size:19px;
+  padding:16px 38px;
+  background:#e83f82;
+}
+
+
+/* FINAL */
+
+.final h1{
+  font-size:40px;
+}
+
+.final-message{
+  font-size:22px;
+  font-weight:bold;
+  color:#d63d78;
+}
+
+
+/* FLOATING HEARTS */
+
+.heart{
+  position:fixed;
+  bottom:-30px;
+  font-size:22px;
+  pointer-events:none;
+  animation:heartRise 5s linear forwards;
+  z-index:10;
+}
+
+@keyframes heartRise{
+
+  0%{
+    transform:translateY(0) scale(.8);
+    opacity:0;
+  }
+
+  20%{
+    opacity:.8;
+  }
+
+  100%{
+    transform:translateY(-110vh) scale(1.2);
+    opacity:0;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  body{
+    padding:8px;
+  }
+
+  .card{
+    min-height:96vh;
+    padding:20px 15px;
+  }
+
+  .screen{
+    min-height:84vh;
+  }
+
+  .image-box img{
+    width:220px;
+    max-height:300px;
+  }
+
+  h1{
+    font-size:31px;
+  }
+
+  p{
+    font-size:16px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="card">
+
+  <!-- PROGRESS -->
+  <div class="progress">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+
+  <!-- SCREEN 1 -->
+
+  <section class="screen active">
+
+    <div class="image-box">
+      <img src="sorry1.jpg" alt="Sorry">
+    </div>
+
+    <div class="small-title">
+      Babu... 🥺
+    </div>
+
+    <h1>
+      Ek baat kehni hai ❤️
+    </h1>
+
+    <p>
+      Please pehle poori baat sun lena...
+      gussa mat hona 🥺
+    </p>
+
+    <button class="next-btn">
+      Sun raha hoon 💗
+    </button>
+
+  </section>
+
+
+
+  <!-- SCREEN 2 -->
+
+  <section class="screen">
+
+    <div class="image-box">
+      <img src="sorry2.jpg" alt="Crying">
+    </div>
+
+    <div class="small-title">
+      Please gussa mat hona 🥺
+    </div>
+
+    <h1>
+      Mujhse galti ho gayi...
+    </h1>
+
+    <p>
+      Aur main nahi chahta ki meri wajah se
+      tumhe bura lage. 💔
+    </p>
+
+    <button class="next-btn">
+      Aage dekho 💕
+    </button>
+
+  </section>
+
+
+
+  <!-- SCREEN 3 -->
+
+  <section class="screen">
+
+    <div class="image-box">
+      <img src="sorry3.jpg" alt="Sad">
+    </div>
+
+    <div class="small-title">
+      Babu... 📱
+    </div>
+
+    <h1>
+      Raat wali baat...
+    </h1>
+
+    <p>
+      Raat ko mera phone on reh gaya tha,
+      isliye main online dikh raha tha. 🌙
+    </p>
+
+    <button class="next-btn">
+      Ek aur baat ❤️
+    </button>
+
+  </section>
+
+
+
+  <!-- SCREEN 4 -->
+
+  <section class="screen">
+
+    <div class="image-box">
+      <img src="sorry4.jpg" alt="Sorry heart">
+    </div>
+
+    <h1>
+      Main actually online nahi tha 🥺
+    </h1>
+
+    <p>
+      Phone bas on reh gaya tha.
+      Main jaan-bujhkar online nahi tha
+      aur na hi tumhe ignore kar raha tha.
+    </p>
+
+    <button class="next-btn">
+      Believe me? 🥹
+    </button>
+
+  </section>
+
+
+
+  <!-- SCREEN 5 -->
+
+  <section class="screen">
+
+    <div class="image-box">
+      <img src="sorry5.jpg" alt="Crying teddy">
+    </div>
+
+    <h1>
+      I didn't mean to hurt you 💔
+    </h1>
+
+    <p>
+      Mujhe pata hai tumhe online dekhkar
+      bura laga hoga.
+      <br><br>
+      But sach mein, maine jaan-bujhkar
+      tumhe ignore nahi kiya.
+    </p>
+
+    <button class="next-btn">
+      Next 🥺
+    </button>
+
+  </section>
+
+
+
+  <!-- SCREEN 6 -->
+
+  <section class="screen">
+
+    <div class="image-box">
+      <img src="sorry6.jpg" alt="Cute sorry">
+    </div>
+
+    <div class="small-title">
+      Dil se...
+    </div>
+
+    <h1>
+      I'm Really Sorry, Babu ❤️
+    </h1>
+
+    <p>
+      Pura din wait karne ke baad
+      tumhe bura laga hoga...
+      aur uske liye mujhe genuinely
+      sorry hai. 🥺
+      <br><br>
+      Please mujhse naraz mat raho.
+    </p>
+
+    <button class="next-btn">
+      Last baat 💌
+    </button>
+
+  </section>
+
+
+
+  <!-- SCREEN 7 -->
+
+  <section class="screen">
+
+    <div class="image-box">
+      <img src="sorry7.jpg" alt="Please forgive me">
+    </div>
+
+    <div class="small-title">
+      Bas ek request... 🥺
+    </div>
+
+    <h1>
+      Maaf kar do na Babu ❤️
+    </h1>
+
+    <p>
+      No excuses...
+      bas dil se ek sorry.
+      <br>
+      Please gussa chhod do na. 🥺💗
+    </p>
+
+    <button class="forgive-btn" id="forgiveBtn">
+      ❤️ Maaf Kiya
+    </button>
+
+  </section>
+
+
+
+  <!-- FINAL SCREEN -->
+
+  <section class="screen final">
+
+    <div class="image-box">
+      <img src="sorry6.jpg" alt="Happy">
+    </div>
+
+    <h1>
+      Yayyy! 🥹❤️
+    </h1>
+
+    <p class="final-message">
+      Thank you, Babu! 💗
+    </p>
+
+    <p>
+      Ab gussa khatam? 🫶
+      <br><br>
+      Ek cute si smile toh banti hai 😊
+      <br><br>
+      Aur haan...
+      <br>
+      Next time phone check karke hi
+      online rahunga 😭😂
+    </p>
+
+    <button id="restartBtn">
+      Dobara Dekho 🔄
+    </button>
+
+  </section>
+
+</div>
+
+
+<script>
+
+const screens = document.querySelectorAll(".screen");
+
+const progress =
+document.querySelectorAll(".progress span");
+
+const nextButtons =
+document.querySelectorAll(".next-btn");
+
+const forgiveBtn =
+document.getElementById("forgiveBtn");
+
+const restartBtn =
+document.getElementById("restartBtn");
+
+let currentScreen = 0;
+
+
+function showScreen(index){
+
+  screens.forEach((screen,i)=>{
+
+    screen.classList.toggle(
+      "active",
+      i === index
+    );
+
+  });
+
+
+  progress.forEach((bar,i)=>{
+
+    bar.classList.toggle(
+      "active",
+      i <= index
+    );
+
+  });
+
+
+  currentScreen = index;
+
+}
+
+
+/* NEXT BUTTONS */
+
+nextButtons.forEach(button=>{
+
+  button.addEventListener("click",()=>{
+
+    if(currentScreen < screens.length - 1){
+
+      showScreen(currentScreen + 1);
+
+    }
+
+  });
+
+});
+
+
+/* MAAF KIYA */
+
+forgiveBtn.addEventListener("click",()=>{
+
+  showScreen(7);
+
+});
+
+
+/* RESTART */
+
+restartBtn.addEventListener("click",()=>{
+
+  showScreen(0);
+
+});
+
+
+/* FLOATING HEARTS */
+
+function createHeart(){
+
+  const heart =
+  document.createElement("div");
+
+  heart.className = "heart";
+
+  const hearts = [
+    "❤️",
+    "💗",
+    "💕",
+    "💖",
+    "🥺"
+  ];
+
+  heart.innerHTML =
+  hearts[Math.floor(Math.random()*hearts.length)];
+
+  heart.style.left =
+  Math.random()*100 + "vw";
+
+  heart.style.animationDuration =
+  (4 + Math.random()*3) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+
+    heart.remove();
+
+  },7000);
+
+}
+
+
+setInterval(createHeart,800);
+
+</script>
+
+</body>
+</html>
