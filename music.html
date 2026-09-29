@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Song 🎵❤️</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#ffb6d5,#ffddeb,#d9c4ff);
+  color:#572d43;
+  overflow:hidden;
+}
+
+/* MUSIC CARD */
+
+.music-card{
+  width:100%;
+  max-width:430px;
+  background:rgba(255,255,255,.94);
+  padding:35px 25px;
+  border-radius:30px;
+  text-align:center;
+  box-shadow:0 15px 50px rgba(150,60,110,.25);
+}
+
+/* ICON */
+
+.music-icon{
+  width:130px;
+  height:130px;
+  margin:0 auto 25px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ff4f96,#d63d78);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:60px;
+  box-shadow:0 10px 30px rgba(255,79,150,.4);
+  animation:musicFloat 2s ease-in-out infinite;
+}
+
+@keyframes musicFloat{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+}
+
+/* TEXT */
+
+h1{
+  font-family:Georgia,serif;
+  color:#d63d78;
+  font-size:34px;
+  margin:10px 0;
+}
+
+p{
+  font-size:17px;
+  line-height:1.6;
+  color:#684458;
+}
+
+/* PLAYER */
+
+audio{
+  width:100%;
+  margin-top:20px;
+}
+
+/* BUTTON */
+
+button{
+  border:0;
+  padding:15px 28px;
+  border-radius:30px;
+  background:#ff4f96;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:20px;
+  box-shadow:0 8px 25px rgba(255,79,150,.35);
+}
+
+button:active{
+  transform:scale(.94);
+}
+
+/* BACK */
+
+.back-btn{
+  display:inline-block;
+  text-decoration:none;
+  margin-top:15px;
+  color:#d63d78;
+  font-weight:bold;
+}
+
+/* HEARTS */
+
+.heart{
+  position:fixed;
+  bottom:-30px;
+  font-size:22px;
+  pointer-events:none;
+  animation:heartRise 5s linear forwards;
+}
+
+@keyframes heartRise{
+
+  0%{
+    transform:translateY(0);
+    opacity:0;
+  }
+
+  20%{
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-110vh);
+    opacity:0;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="music-card">
+
+  <div class="music-icon">
+    🎵
+  </div>
+
+  <h1>
+    Our Song ❤️
+  </h1>
+
+  <p>
+    Bas ek song... 🎶
+    <br>
+    Aur thodi si cute memories. 🥹💗
+  </p>
+
+  <!-- MUSIC -->
+
+  <audio id="music" controls loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+
+  <button id="playBtn">
+    ▶️ Play Music
+  </button>
+
+  <br>
+
+  <a href="index.html" class="back-btn">
+    ← Back to Sorry Babu 💗
+  </a>
+
+</div>
+
+
+<script>
+
+const music = document.getElementById("music");
+const playBtn = document.getElementById("playBtn");
+
+playBtn.addEventListener("click", () => {
+
+  if(music.paused){
+
+    music.play();
+
+    playBtn.innerHTML = "⏸️ Pause Music";
+
+  }else{
+
+    music.pause();
+
+    playBtn.innerHTML = "▶️ Play Music";
+
+  }
+
+});
+
+
+/* Floating Hearts */
+
+function createHeart(){
+
+  const heart = document.createElement("div");
+
+  heart.className = "heart";
+
+  const hearts = [
+    "❤️",
+    "💗",
+    "💕",
+    "💖",
+    "🎵"
+  ];
+
+  heart.innerHTML =
+    hearts[Math.floor(Math.random() * hearts.length)];
+
+  heart.style.left =
+    Math.random() * 100 + "vw";
+
+  heart.style.animationDuration =
+    (4 + Math.random() * 3) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  },7000);
+
+}
+
+setInterval(createHeart,800);
+
+</script>
+
+</body>
+</html>
